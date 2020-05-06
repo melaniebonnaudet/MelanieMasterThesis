@@ -61,6 +61,7 @@
 \usepackage{float}
 \usepackage{enumitem}
 \usepackage{array}
+\usepackage{float,wrapfig,subcaption}
 
 % Some optional stuff you might like/need.
 \usepackage{microtype}        % Improved Tracking and Kerning
@@ -131,6 +132,11 @@
 % create a shortcut to typeset table headings
 % \newcommand\tabhead[1]{\small\textbf{#1}}
 
+% deletes all copyright text on first page:
+\makeatletter
+\def\@copyrightspace{\relax}
+\makeatother
+
 % End of preamble. Here it comes the document.
 \begin{document}
 
@@ -199,7 +205,7 @@ The cancer patient’s medical situation and decisions have impact on its relati
     \item The \textbf{main caregiver}: usually accompanying the patient to medical consultations and assisting in the patient’s care. The caregiver is related to the patient biologically, legally or emotionally.
 \end{itemize}
 
-To enhance the communication between cancer patients, their caregivers and oncologists, the TRIO project has created an online learning platform, with content based on TRIO guidelines \cite{Laidsaar-Powell2018a} \cite{Laidsaar-Powell2018}. Each group in the TRIO Framework has its own learning platform with learning modules covering different topics. It is a multimedia e-learning platform as it is constituted of text, videos and different interactive activities. These are, for example, yes-no questions, sorting cards according to their importance, surveys about the user’s emotional profile, etc. This type of content makes learning an active process, however inadequate user experience can affect the learning outcome negatively \cite{Huang2005}. Therefore, this study aims to evaluate the usability and use of eTRIO. It investigates the user experience of the TRIO e-learning platform to determine what interactions and presentations of content are needed to successfully meet the users' communication and information needs.
+To enhance the communication between cancer patients, their caregivers and oncologists, the TRIO project has created an online learning platform, with content based on TRIO guidelines \cite{Laidsaar-Powell2018a, Laidsaar-Powell2018}. Each group in the TRIO Framework has its own learning platform with learning modules covering different topics. It is a multimedia e-learning platform as it is constituted of text, videos and different interactive activities. These are, for example, yes-no questions, sorting cards according to their importance, surveys about the user’s emotional profile, etc. This type of content makes learning an active process, however inadequate user experience can affect the learning outcome negatively \cite{Huang2005}. Therefore, this study aims to evaluate the usability and use of eTRIO. It investigates the user experience of the TRIO e-learning platform to determine what interactions and presentations of content are needed to successfully meet the users' communication and information needs.
 
 \section{Background}
 
@@ -207,35 +213,37 @@ To enhance the communication between cancer patients, their caregivers and oncol
 
 Laidsaar-Powell, R. et al. ~\cite{Laidsaar-Powell2017} introduced the notion of a TRIO Framework, also called TRIO Triangle. It is constituted of a cancer patient, a main clinician and a main caregiver. The purpose was to study why it is important to understand the involvement of family caregivers in cancer care. Their study shows to which extent they are involved in treatment decisions in cancer consultations. Results have proven that caregivers’ involvement depend on several factors and vary from person to person. These factors can be demographic, psychological, relational, cultural and medical. Three different cases are given with different influences in decision-making from the caregiver.
 
-First case, a patient and oncologist discuss whether to undergo chemotherapy or not. The caregiver states they will support whatever decision the patient takes. As shown in Figure \ref{fig:PatientClinicianFocus}, the decision is focused between the patient and oncologist.
+A first case is where a patient and oncologist discuss whether to undergo chemotherapy or not. The caregiver states they will support whatever decision the patient takes. As shown in Figure  \ref{a:PatientClinician}, the decision is focused between the patient and oncologist.
+
+A second case is where a patient has to choose whether to delay chemotherapy or to undergo fertility treatment. The patient discusses this with her husband, and he states he would prefer the fertility treatment for her and their family. As shown in Figure \ref{b:PatientCarer}, the decision-making focus is mainly on the patient followed by her husband.
 
 \raggedbottom
 
-\begin{figure}[H]
-\centering
-  \includegraphics[width=0.9\columnwidth]{figures/Triangle1Screenshot.jpg}
-  \caption{TRIO Framework/Triangle with focus between the patient and the clinician. Figure from}~\label{fig:PatientClinicianFocus}
+% double figure starts here
+
+\begin{figure} [H]
+\begin{subfigure}{.45\columnwidth}
+  \centering
+  \includegraphics[width=1\columnwidth]{figures/Triangle1Screenshot.jpg}
+  \caption{Focus between the patient and the clinician}
+  \label{a:PatientClinician}
+\end{subfigure}%
+\hfill
+\begin{subfigure}{.45\columnwidth}
+  \centering
+  \includegraphics[width=1\columnwidth]{figures/Triangle2Screenshotjpg.jpg}
+  \caption{Focus between the patient and the carer}
+  \label{b:PatientCarer}
+\end{subfigure}
+\caption{TRIO Framework/Triangle. Figures from}
+\label{fig:TRIO Framework/Triangle}
 \end{figure}
 
-Second case, a patient has to choose whether to delay chemotherapy or to undergo fertility treatment. The patient discusses this with her husband, and he states he would prefer the fertility treatment for her and their family. As shown in Figure \ref{fig:PatientFocus}, the decision-making focus is mainly on the patient followed by her husband.
+% double figure stops here
 
-\raggedbottom
+A third case is where a patient with limited English proficiency has cancer and his son, fluent in English, exchanges all information with the oncologist. The son directs the conversation with consent of the patient. The decision-making focus relies on the son, the caregiver.
 
-\begin{figure}[H]
-\centering
-  \includegraphics[width=0.9\columnwidth]{figures/Triangle2Screenshotjpg.jpg}
-  \caption{TRIO Framework/Triangle with focus between the patient and the caregiver. Figure from}~\label{fig:PatientFocus}
-\end{figure}
-
-Third case, a patient with limited English proficiency has cancer and his son, fluent in English, exchanges all information with the oncologist. The son directs the conversation with consent of the patient. As shown in Figure \ref{fig:CaregiverFocus}, the decision-making focus relies on the son, the caregiver.
-
-\begin{figure}[H]
-\centering
-  \includegraphics[width=0.9\columnwidth]{figures/Triangle3Screenshot.jpg}
-  \caption{TRIO Framework/Triangle with focus between the clinician and the caregiver. Figure from}~\label{fig:CaregiverFocus}
-\end{figure}
-
-Knowing how much each party is involved is important for TRIO’s e-learning platform as all three are target groups for the website. Triadic communication has been shown to be helpful in medical encounters but can also be challenging \cite{Laidsaar-Powell2013}. To facilitate this, psychologists, clinician experts and academics have through years of research determined the TRIO guidelines. These have been used for the TRIO e-learning modules. Guidelines consist of enhancing the collaboration of caregivers' involvement in medical encounters of oncology as well as how to handle challenging interactions with caregivers \cite{Laidsaar-Powell2018a} \cite{Laidsaar-Powell2018}.
+Knowing how much each party is involved is important for TRIO’s e-learning platform as all three are target groups for the website. Triadic communication has been shown to be helpful in medical encounters but can also be challenging \cite{Laidsaar-Powell2013}. To facilitate this, psychologists, clinician experts and academics have through years of research determined the TRIO guidelines. These have been used to design the TRIO e-learning modules. Guidelines consist of enhancing the collaboration of caregivers' involvement in medical encounters of oncology as well as how to handle challenging interactions with caregivers \cite{Laidsaar-Powell2018a, Laidsaar-Powell2018}.
 
 What roles family members have in the decision-making of treatment for people with chronic diseases has been studied by Lamore, K. et al. ~\cite{Lamore2017}. Family members need to be provided with medical knowledge and often want to participate in decision-making discussions. For this, they must have helpful behaviours, not being dominating, providing information and support the patient. The patient must also decide when they need a private conversation with the physician. This study mentions that all three parties are positive towards the involvement of caregivers in medical consultations and decisions. Although, for this to work well caregivers need information, both medical and behavioural. The TRIO website aims to provide this information, which is why it is important to study the platform before being released for an optimal learning and caregiver involvement. 
 
@@ -260,7 +268,7 @@ Huang, C. ~\cite{Huang2005} shows that designing an interactive multimedia learn
 When the module is built, user tests and heuristic evaluation are needed to know how the modules perform. Technical problems can interfere with the learning outcome. Science, education and technology knowledge must be combined for an excellent educational media. The current state of the TRIO website is that it needs to be evaluated to get its best user experience which will be reported in this study. 
 
 \subsection{Purpose and research question}
-The TRIO e-learning platform aims to enhance the communication between all parts of the TRIO framework. This is an important objective for the well-being of patients, carers and clinicians. To achieve this the usability of the e-learning must be adequate. Hereby, the following research question will be answered; In which ways is the usability of TRIO's interface suitable for the communication needs in cancer care for the caregivers, patients and clinicians?
+The TRIO e-learning platform aims to enhance the communication between all parts of the TRIO framework. This is an important objective for the well-being of patients, carers and clinicians. To achieve this the usability of the e-learning must be adequate. To achieve this, this study aimed to answer the following research question; What are the strengths and weaknesses of the TRIO interfaces and content for clinicians, carers and patients in terms of their usability?
 
 \section{Method}
 This section describes the scientific methodology used to answer the research question. The method includes analysing and conducting think-alouds, heuristic evaluation and time logs.
@@ -358,7 +366,7 @@ As shown in Table \ref{tab:interactions}, 17 problems were identified within but
     \hline
          No error message more than an exclamation mark when textboxes are not filled in & 2 & 5 & 5\\
     \hline
-         Can be unclear what the button "save and exit" means. & 2 & 5 & 4\\
+         Can be unclear what the button "save and exit" means & 2 & 5 & 4\\
     \hline
          Not possible to save on what page in a part the user stopped & 1 & 5 & 3\\
     \hline
@@ -420,7 +428,7 @@ As shown in Table \ref{tab:content}, 9 problems were identified within the redun
     \hline
          Progress bar is not showing the correct progress & 1 & 5 & 2\\
     \hline
-         Some boxes get thinner than others when opened & 3 & 4 & 3\\
+         Some boxes get thinner than others when opened & 2 & 4 & 3\\
     \hline
          No information about the arrow buttons & 1 & 1 & 5\\
     \hline
